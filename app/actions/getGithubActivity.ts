@@ -1,3 +1,5 @@
+"use server";
+
 import { parseError } from "@julian-at/lib/utils";
 import { updateEdgeConfig } from "@julian-at/lib/vercel";
 import { endOfWeek, subDays, subWeeks } from "date-fns";
@@ -11,13 +13,15 @@ export type GitHubProperties = {
 
 type GitHubContributionsApiResponse = {
   contributions: Activity[];
+  total: Record<string, number>;
 };
 
-export const maxDuration = 300;
-export const revalidate = 0;
-export const dynamic = "force-dynamic";
-
-export const GET = async (): Promise<Response> => {
+export async function getGithubActivity(): Promise<{
+  success: boolean;
+  data?: Activity[];
+  total?: number;
+  error?: string;
+}> {
   try {
     const today = endOfWeek(subWeeks(new Date(), 1));
     const oneYearAgo = subDays(today, 365);
@@ -51,12 +55,9 @@ export const GET = async (): Promise<Response> => {
       ),
     };
 
-    await updateEdgeConfig("github", content);
-
-    return new Response(undefined, { status: 204 });
+    return { success: true, ...content };
   } catch (error) {
     const message = parseError(error);
-
-    return new Response(message, { status: 500 });
+    return { success: false, error: message };
   }
-};
+}
