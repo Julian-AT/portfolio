@@ -1,21 +1,23 @@
-import { ROLES } from '@julian-at/app/work/components/roles';
-import { Prose } from '@julian-at/components/prose';
-import { Section } from '@julian-at/components/section';
-import { HeroSection } from '@julian-at/components/sections/hero';
-import { env } from '@julian-at/lib/env';
-import { cn } from '@julian-at/lib/utils';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import Balancer from 'react-wrap-balancer';
+import { ROLES } from "@julian-at/app/work/components/roles";
+import { Prose } from "@julian-at/components/prose";
+import { Section } from "@julian-at/components/section";
+import { HeroSection } from "@julian-at/components/sections/hero";
+import { env } from "@julian-at/lib/env";
+import { cn } from "@julian-at/lib/utils";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import Balancer from "react-wrap-balancer";
 
 type RoleProps = {
-  params: {
+  params: Promise<{
     role: string;
-  };
+  }>;
 };
 
 export const generateMetadata = async ({ params }: RoleProps) => {
-  const role = ROLES.find((r) => r.slug === params.role);
+  const { role: paramRole } = await params;
+
+  const role = ROLES.find((r) => r.slug === paramRole);
 
   if (!role) {
     return {};
@@ -28,7 +30,9 @@ export const generateMetadata = async ({ params }: RoleProps) => {
 };
 
 const Role = async ({ params }: RoleProps) => {
-  const role = ROLES.find((r) => r.slug === params.role);
+  const { role: paramRole } = await params;
+
+  const role = ROLES.find((r) => r.slug === paramRole);
 
   if (!role) {
     return notFound();
@@ -55,14 +59,14 @@ const Role = async ({ params }: RoleProps) => {
         </p>
         <div
           className={cn(
-            'flex flex-wrap gap-2 text-muted-foreground text-sm',
-            'sm:items-center sm:justify-center sm:gap-4'
+            "flex flex-wrap gap-2 text-muted-foreground text-sm",
+            "sm:items-center sm:justify-center sm:gap-4"
           )}
         >
           <p>{role.type}</p>
           <p>&bull;</p>
           <p>
-            {role.startYear} &mdash; {role.endYear ?? 'Present'}
+            {role.startYear} &mdash; {role.endYear ?? "Present"}
           </p>
           <p>&bull;</p>
           <p>{role.location}</p>
@@ -76,7 +80,7 @@ const Role = async ({ params }: RoleProps) => {
           )}
         </div>
       </HeroSection>
-      <Section className={cn('px-4 py-8', 'sm:px-8 sm:py-16')}>
+      <Section className={cn("px-4 py-8", "sm:px-8 sm:py-16")}>
         <Prose className="mx-auto max-w-3xl">
           {role.content.map((block, index) => (
             <p key={index}>{block.content}</p>
