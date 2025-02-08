@@ -1,9 +1,9 @@
+import { Prose } from '@julian-at/components/prose';
 import { Section } from '@julian-at/components/section';
+import { Button } from '@julian-at/components/ui/button';
 import { ViewAnimation } from '@julian-at/providers/view-animation';
 import { ArrowUpRightIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { Prose } from '@julian-at/components/prose';
-import { Button } from '@julian-at/components/ui/button';
 
 type ThirdsSectionProps = {
   caption: string;

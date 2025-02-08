@@ -1,5 +1,5 @@
-import { codeToHtml } from 'shiki';
 import { CodeSnippetClient } from '@julian-at/components/code-snippet/client';
+import { codeToHtml } from 'shiki';
 
 type CodeSnippetProps = {
   language: string;

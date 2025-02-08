@@ -1,8 +1,8 @@
+import { GitHubEvent } from '@julian-at/app/(home)/components/event';
 import { Section } from '@julian-at/components/section';
 import { octokit } from '@julian-at/lib/github';
 import { cn } from '@julian-at/lib/utils';
 import { ViewAnimation } from '@julian-at/providers/view-animation';
-import { GitHubEvent } from '@julian-at/app/(home)/components/event';
 
 export const Feed = async () => {
   const activity = await octokit.rest.activity.listPublicEventsForUser({

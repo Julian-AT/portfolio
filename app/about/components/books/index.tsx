@@ -1,10 +1,15 @@
+import { Book } from '@julian-at/app/about/components/books/book';
 import type { OkuProperties } from '@julian-at/app/api/cron/oku/route';
 import { Section } from '@julian-at/components/section';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@julian-at/components/ui/tabs';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@julian-at/components/ui/tabs';
 import { cn } from '@julian-at/lib/utils';
 import { ViewAnimation } from '@julian-at/providers/view-animation';
 import { get } from '@vercel/edge-config';
-import { Book } from '@julian-at/app/about/components/books/book';
 
 export const Books = async () => {
   const books = await get<OkuProperties>('oku');

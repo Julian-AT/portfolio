@@ -1,13 +1,12 @@
+import { APPS } from '@julian-at/app/projects/components/apps';
+import { ROLES } from '@julian-at/app/work/components/roles';
+import { ActiveLink } from '@julian-at/components/active-link';
 import { navigation } from '@julian-at/lib/navigation';
 import { social } from '@julian-at/lib/social';
+import { ViewAnimation } from '@julian-at/providers/view-animation';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { ViewAnimation } from '@julian-at/providers/view-animation';
-import { ActiveLink } from '@julian-at/components/active-link';
-import { cn } from '@julian-at/lib/utils';
-import { ROLES } from '@julian-at/app/work/components/roles';
-import { APPS } from '@julian-at/app/projects/components/apps';
 
 export const Links = async () => {
   const lists: {
@@ -67,34 +66,34 @@ export const Links = async () => {
     <div className="grid gap-8 text-muted-foreground text-sm sm:grid-cols-4">
       {lists.map((list, index) => (
         <ViewAnimation
-              initial={{ opacity: 0, translateY: -8 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-              delay={index * 0.1}
-              key={list.title}
-              className='flex flex-col gap-6'
-            >
-              <div className="font-medium text-foreground">
-                {list.href ? (
-                  <Link href={list.href}>{list.title}</Link>
-                ) : (
-                  <p>{list.title}</p>
-                )}
-              </div>
-              <ul className="flex flex-col gap-3">
-                {list.items.map((item) => (
-                  <li key={item.href}>
-                    <ActiveLink
-                      href={item.href}
-                      target={list.external ? '_blank' : undefined}
-                      rel={list.external ? 'noopener noreferrer' : undefined}
-                    >
-                      {item.children}
-                    </ActiveLink>
-                  </li>
-                ))}
-              </ul>
-            </ViewAnimation>
-          ))}
-        </div>
+          initial={{ opacity: 0, translateY: -8 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          delay={index * 0.1}
+          key={list.title}
+          className="flex flex-col gap-6"
+        >
+          <div className="font-medium text-foreground">
+            {list.href ? (
+              <Link href={list.href}>{list.title}</Link>
+            ) : (
+              <p>{list.title}</p>
+            )}
+          </div>
+          <ul className="flex flex-col gap-3">
+            {list.items.map((item) => (
+              <li key={item.href}>
+                <ActiveLink
+                  href={item.href}
+                  target={list.external ? '_blank' : undefined}
+                  rel={list.external ? 'noopener noreferrer' : undefined}
+                >
+                  {item.children}
+                </ActiveLink>
+              </li>
+            ))}
+          </ul>
+        </ViewAnimation>
+      ))}
+    </div>
   );
 };

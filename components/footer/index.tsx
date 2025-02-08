@@ -1,8 +1,8 @@
-import { cn } from '@julian-at/lib/utils';
-import { ViewAnimation } from '@julian-at/providers/view-animation';
 import { Links } from '@julian-at/components/footer/links';
 import { Status } from '@julian-at/components/footer/status';
 import { ThemeSwitcher } from '@julian-at/components/footer/theme-switcher';
+import { cn } from '@julian-at/lib/utils';
+import { ViewAnimation } from '@julian-at/providers/view-animation';
 
 export const Footer = () => (
   <footer

@@ -1,11 +1,9 @@
-import React from "react";
-import { Prose } from "@julian-at/components/prose";
-import { Section } from "@julian-at/components/section";
-import { env } from "@julian-at/lib/env";
-import { cn } from "@julian-at/lib/utils";
-import { ViewAnimation } from "@julian-at/providers/view-animation";
-import Image from "next/image";
-import Link from "next/link";
+import { Prose } from '@julian-at/components/prose';
+import { Section } from '@julian-at/components/section';
+import { cn } from '@julian-at/lib/utils';
+import { ViewAnimation } from '@julian-at/providers/view-animation';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface Certificate {
   title: string;
@@ -16,34 +14,34 @@ interface Certificate {
 
 export const CERTIFICATES: Certificate[] = [
   {
-    title: "Personal Certificate",
-    description: "Personal Certificate",
-    date: "2025-01-01",
-    image: "/images/certificates/personal.png",
+    title: 'Personal Certificate',
+    description: 'Personal Certificate',
+    date: '2025-01-01',
+    image: '/images/certificates/personal.png',
   },
   {
-    title: "Personal Certificate",
-    description: "Personal Certificate",
-    date: "2025-01-01",
-    image: "/images/certificates/personal.png",
+    title: 'Personal Certificate',
+    description: 'Personal Certificate',
+    date: '2025-01-01',
+    image: '/images/certificates/personal.png',
   },
   {
-    title: "Personal Certificate",
-    description: "Personal Certificate",
-    date: "2025-01-01",
-    image: "/images/certificates/personal.png",
+    title: 'Personal Certificate',
+    description: 'Personal Certificate',
+    date: '2025-01-01',
+    image: '/images/certificates/personal.png',
   },
   {
-    title: "Personal Certificate",
-    description: "Personal Certificate",
-    date: "2025-01-01",
-    image: "/images/certificates/personal.png",
+    title: 'Personal Certificate',
+    description: 'Personal Certificate',
+    date: '2025-01-01',
+    image: '/images/certificates/personal.png',
   },
   {
-    title: "Personal Certificate",
-    description: "Personal Certificate",
-    date: "2025-01-01",
-    image: "/images/certificates/personal.png",
+    title: 'Personal Certificate',
+    description: 'Personal Certificate',
+    date: '2025-01-01',
+    image: '/images/certificates/personal.png',
   },
 ];
 
@@ -56,16 +54,16 @@ const Certificates = () => {
           whileInView={{ opacity: 1 }}
           delay={index % 2 ? 0.2 : 0}
           className={cn(
-            index % 2 === 0 ? "sm:border-r" : "",
-            index < CERTIFICATES.length - 2 ? "border-b" : ""
+            index % 2 === 0 ? 'sm:border-r' : '',
+            index < CERTIFICATES.length - 2 ? 'border-b' : ''
           )}
           key={index}
         >
           <Link
             href={`/work/${certificate.title}`}
             className={cn(
-              "flex flex-col items-start gap-6 px-4 py-8 transition-colors hover:bg-background",
-              "sm:flex-row sm:px-8"
+              'flex flex-col items-start gap-6 px-4 py-8 transition-colors hover:bg-background',
+              'sm:flex-row sm:px-8'
             )}
           >
             <div className="flex h-12 w-12 shrink-0 items-center justify-center">
@@ -75,7 +73,7 @@ const Certificates = () => {
                   width={48}
                   height={48}
                   alt={certificate.title}
-                  className={cn("block h-12 w-12 object-contain")}
+                  className={cn('block h-12 w-12 object-contain')}
                 />
               ) : (
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-border">

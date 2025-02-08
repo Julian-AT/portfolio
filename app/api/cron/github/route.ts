@@ -39,25 +39,29 @@ export const GET = async (): Promise<Response> => {
     const twoYearsAgoTs = twoYearsAgo.getTime();
 
     // Pre-process contributions to avoid repeated date parsing
-    const processedContributions = response.contributions.map(({ date, count, color, intensity }) => ({
-      date,
-      count,
-      color,
-      intensity,
-      ts: new Date(date).getTime()
-    }));
+    const processedContributions = response.contributions.map(
+      ({ date, count, color, intensity }) => ({
+        date,
+        count,
+        color,
+        intensity,
+        ts: new Date(date).getTime(),
+      })
+    );
 
     const content: GitHubProperties = {
       data: processedContributions
         .filter(({ ts }) => ts <= todayTs && ts >= twoYearsAgoTs)
         .filter(({ count }) => count > 0)
-        .map(({ date, count, color, intensity }) => ({ 
-          date, 
+        .map(({ date, count, color, intensity }) => ({
+          date,
           count,
           color,
-          intensity 
+          intensity,
         }))
-        .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()),
+        .sort(
+          (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+        ),
       total: processedContributions.reduce(
         (total, { ts, count }) =>
           ts >= oneYearAgoTs && ts <= todayTs ? total + count : total,
@@ -65,9 +69,7 @@ export const GET = async (): Promise<Response> => {
       ),
     };
 
-    console.log("content size (kb):", JSON.stringify(content).length / 1024);
-    
-    
+    console.log('content size (kb):', JSON.stringify(content).length / 1024);
 
     await updateEdgeConfig('github', content);
 

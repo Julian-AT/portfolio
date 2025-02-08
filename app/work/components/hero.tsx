@@ -5,7 +5,7 @@ import { social } from '@julian-at/lib/social';
 import Link from 'next/link';
 
 export const Hero = () => (
-  <HeroSection 
+  <HeroSection
     caption="Work Experience"
     title="Crafting software solutions and pushing technological boundaries"
   >

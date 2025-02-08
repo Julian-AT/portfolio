@@ -69,7 +69,7 @@ export const GET = async (): Promise<Response> => {
       )
       .json();
 
-    console.log("data", data);
+    console.log('data', data);
 
     if (!data.item) {
       // No song playing

@@ -1,225 +1,228 @@
-import { StickyList } from "@julian-at/components/sections/sticky-list";
-import { env } from "@julian-at/lib/env";
-import { cn } from "@julian-at/lib/utils";
-import { ViewAnimation } from "@julian-at/providers/view-animation";
-import { VerifiedIcon } from "lucide-react";
-import Image from "next/image";
+import { StickyList } from '@julian-at/components/sections/sticky-list';
+import { env } from '@julian-at/lib/env';
+import { cn } from '@julian-at/lib/utils';
+import { ViewAnimation } from '@julian-at/providers/view-animation';
+import { VerifiedIcon } from 'lucide-react';
+import Image from 'next/image';
 
 const APPS = [
   {
-    title: "Cursor",
+    title: 'Cursor',
     description:
-      "Modern code editor with powerful AI pair programming capabilities",
-    url: "https://cursor.com",
-    category: "AI",
+      'Modern code editor with powerful AI pair programming capabilities',
+    url: 'https://cursor.com',
+    category: 'AI',
     featured: true,
   },
   {
-    title: "Perplexity",
+    title: 'Perplexity',
     description:
-      "AI-powered search that provides detailed answers with cited sources",
-    url: "https://perplexity.ai",
-    category: "AI",
+      'AI-powered search that provides detailed answers with cited sources',
+    url: 'https://perplexity.ai',
+    category: 'AI',
     featured: true,
   },
   {
-    title: "ChatGPT",
+    title: 'ChatGPT',
     description:
-      "Versatile AI assistant for writing, analysis, and problem-solving",
-    url: "https://chatgpt.com",
-    category: "AI",
+      'Versatile AI assistant for writing, analysis, and problem-solving',
+    url: 'https://chatgpt.com',
+    category: 'AI',
     featured: true,
   },
   {
-    title: "Midjourney",
+    title: 'Midjourney',
     description:
-      "Advanced AI art generator creating stunning visuals from text descriptions",
-    url: "https://midjourney.com",
-    category: "AI",
+      'Advanced AI art generator creating stunning visuals from text descriptions',
+    url: 'https://midjourney.com',
+    category: 'AI',
     featured: true,
   },
   {
-    title: "Git",
-    description: "Distributed version control system",
-    url: "https://git-scm.com",
-    category: "Development",
+    title: 'Git',
+    description: 'Distributed version control system',
+    url: 'https://git-scm.com',
+    category: 'Development',
     featured: true,
   },
   {
-    title: "Github Desktop",
+    title: 'Github Desktop',
     description:
-      "Streamlined Git workflow with visual interface for repository management",
-    url: "https://desktop.github.com",
-    category: "Development",
+      'Streamlined Git workflow with visual interface for repository management',
+    url: 'https://desktop.github.com',
+    category: 'Development',
     featured: true,
   },
   {
-    title: "Postman",
+    title: 'Postman',
     description:
-      "Comprehensive platform for API testing, documentation and collaboration",
-    url: "https://postman.com",
-    category: "Development",
+      'Comprehensive platform for API testing, documentation and collaboration',
+    url: 'https://postman.com',
+    category: 'Development',
     featured: true,
   },
   {
-    title: "Visual Studio",
+    title: 'Visual Studio',
     description:
-      "Integrated development environment for building modern web and mobile apps",
-    url: "https://visualstudio.microsoft.com",
-    category: "Development",
+      'Integrated development environment for building modern web and mobile apps',
+    url: 'https://visualstudio.microsoft.com',
+    category: 'Development',
     featured: true,
   },
   {
-    title: "Intellij IDEA Ultimate",
+    title: 'Intellij IDEA Ultimate',
     description:
-      "Feature-rich Java IDE with advanced debugging and framework support",
-    url: "https://www.jetbrains.com/idea/",
-    category: "Development",
+      'Feature-rich Java IDE with advanced debugging and framework support',
+    url: 'https://www.jetbrains.com/idea/',
+    category: 'Development',
     featured: true,
   },
   {
-    title: "PyCharm Professional",
+    title: 'PyCharm Professional',
     description:
-      "Powerful Python IDE with scientific tools and web development features",
-    url: "https://www.jetbrains.com/pycharm/",
-    category: "Development",
+      'Powerful Python IDE with scientific tools and web development features',
+    url: 'https://www.jetbrains.com/pycharm/',
+    category: 'Development',
     featured: true,
   },
   {
-    title: "WebStorm",
+    title: 'WebStorm',
     description:
-      "Sophisticated JavaScript IDE with full-stack development capabilities",
-    url: "https://www.jetbrains.com/webstorm/",
-    category: "Development",
+      'Sophisticated JavaScript IDE with full-stack development capabilities',
+    url: 'https://www.jetbrains.com/webstorm/',
+    category: 'Development',
     featured: true,
   },
   {
-    title: "Resend",
-    description: "Email delivery service for developers",
-    url: "https://resend.com",
-    category: "Development",
+    title: 'Resend',
+    description: 'Email delivery service for developers',
+    url: 'https://resend.com',
+    category: 'Development',
     featured: true,
   },
   {
-    title: "Cyberghost",
-    description: "Secure VPN service with global servers and strong encryption",
-    url: "https://cyberghost.com",
-    category: "Security",
+    title: 'Cyberghost',
+    description: 'Secure VPN service with global servers and strong encryption',
+    url: 'https://cyberghost.com',
+    category: 'Security',
     featured: true,
   },
   {
-    title: "KeePassXC",
-    description: "Free, open-source, cross-platform password manager",
-    url: "https://keepassxc.org",
-    category: "Security",
+    title: 'KeePassXC',
+    description: 'Free, open-source, cross-platform password manager',
+    url: 'https://keepassxc.org',
+    category: 'Security',
     featured: true,
   },
   {
-    title: "JIRA",
+    title: 'JIRA',
     description:
-      "Robust agile project management tool for software development teams",
-    url: "https://jira.com",
-    category: "Productivity",
+      'Robust agile project management tool for software development teams',
+    url: 'https://jira.com',
+    category: 'Productivity',
     featured: true,
   },
   {
-    title: "Trello",
+    title: 'Trello',
     description:
-      "Visual kanban-style board for flexible task and project organization",
-    url: "https://trello.com",
-    category: "Productivity",
+      'Visual kanban-style board for flexible task and project organization',
+    url: 'https://trello.com',
+    category: 'Productivity',
     featured: true,
   },
   {
-    title: "Slack",
+    title: 'Slack',
     description:
-      "Real-time messaging platform with powerful integrations for teams",
-    url: "https://slack.com",
-    category: "Productivity",
+      'Real-time messaging platform with powerful integrations for teams',
+    url: 'https://slack.com',
+    category: 'Productivity',
     featured: true,
   },
   {
-    title: "Notion",
+    title: 'Notion',
     description:
-      "All-in-one workspace for notes, docs, and collaborative knowledge bases",
-    url: "https://notion.so",
-    category: "Productivity",
+      'All-in-one workspace for notes, docs, and collaborative knowledge bases',
+    url: 'https://notion.so',
+    category: 'Productivity',
     featured: true,
   },
   {
-    title: "Zoom",
+    title: 'Zoom',
     description:
-      "Professional video conferencing with screen sharing and recording",
-    url: "https://zoom.us",
-    category: "Productivity",
+      'Professional video conferencing with screen sharing and recording',
+    url: 'https://zoom.us',
+    category: 'Productivity',
     featured: true,
   },
   {
-    title: "Discord",
+    title: 'Discord',
     description:
-      "Voice and text chat platform with customizable servers and community features",
-    url: "https://discord.com",
-    category: "Productivity",
+      'Voice and text chat platform with customizable servers and community features',
+    url: 'https://discord.com',
+    category: 'Productivity',
     featured: true,
   },
   {
-    title: "Figma",
+    title: 'Figma',
     description:
-      "Collaborative interface design tool with real-time editing capabilities",
-    url: "https://figma.com",
-    category: "Design",
+      'Collaborative interface design tool with real-time editing capabilities',
+    url: 'https://figma.com',
+    category: 'Design',
     featured: true,
   },
   {
-    title: "Ray.so",
+    title: 'Ray.so',
     description:
-      "Clean and customizable code snippet image generator for sharing",
-    url: "https://ray.so",
-    category: "Design",
+      'Clean and customizable code snippet image generator for sharing',
+    url: 'https://ray.so',
+    category: 'Design',
     featured: true,
   },
   {
-    title: "Unsplash",
+    title: 'Unsplash',
     description:
-      "High-quality royalty-free photos from professional photographers",
-    url: "https://unsplash.com",
-    category: "Design",
+      'High-quality royalty-free photos from professional photographers',
+    url: 'https://unsplash.com',
+    category: 'Design',
     featured: true,
   },
   {
-    title: "Framer",
+    title: 'Framer',
     description:
-      "Interactive prototyping tool for creating responsive web designs",
-    url: "https://framer.com",
-    category: "Design",
+      'Interactive prototyping tool for creating responsive web designs',
+    url: 'https://framer.com',
+    category: 'Design',
     featured: true,
   },
   {
-    title: "Dribbble",
+    title: 'Dribbble',
     description:
-      "Community-driven platform for showcasing and discovering design work",
-    url: "https://dribbble.com",
-    category: "Design",
+      'Community-driven platform for showcasing and discovering design work',
+    url: 'https://dribbble.com',
+    category: 'Design',
     featured: true,
   },
   {
-    title: "Behance",
+    title: 'Behance',
     description:
-      "Showcase and discover creative work from designers and creatives worldwide",
-    url: "https://behance.net",
-    category: "Design",
+      'Showcase and discover creative work from designers and creatives worldwide',
+    url: 'https://behance.net',
+    category: 'Design',
     featured: true,
   },
 ];
 
 export const Apps = () => {
-  const groups = APPS.reduce((acc, app) => {
-    if (!acc[app.category]) {
-      acc[app.category] = [];
-    }
-    acc[app.category].push(app);
-    return acc;
-  }, {} as Record<string, typeof APPS>);
+  const groups = APPS.reduce(
+    (acc, app) => {
+      if (!acc[app.category]) {
+        acc[app.category] = [];
+      }
+      acc[app.category].push(app);
+      return acc;
+    },
+    {} as Record<string, typeof APPS>
+  );
 
   return Object.entries(groups).map(([category, apps]) => (
     <StickyList title={category} key={category}>
@@ -230,9 +233,9 @@ export const Apps = () => {
             <div
               key={app.title}
               className={cn(
-                index && "border-t",
-                index < 2 && "sm:border-t-0",
-                index % 2 === 0 && "sm:border-r"
+                index && 'border-t',
+                index < 2 && 'sm:border-t-0',
+                index % 2 === 0 && 'sm:border-r'
               )}
             >
               <ViewAnimation
@@ -243,8 +246,8 @@ export const Apps = () => {
                 <a
                   key={app.title}
                   className={cn(
-                    "flex items-start gap-4 px-4 py-8 transition-colors hover:bg-background",
-                    "sm:px-8"
+                    'flex items-start gap-4 px-4 py-8 transition-colors hover:bg-background',
+                    'sm:px-8'
                   )}
                   href={app.url}
                   target="_blank"

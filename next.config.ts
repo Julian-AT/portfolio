@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 import { createSecureHeaders } from 'next-secure-headers';
-
 
 const nextConfig: NextConfig = {
   images: {

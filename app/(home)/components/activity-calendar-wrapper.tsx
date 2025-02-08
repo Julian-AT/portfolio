@@ -8,9 +8,7 @@ interface ActivityCalendarWrapperProps {
   data: Activity[];
 }
 
-const ActivityCalendarWrapper = ({
-  data,
-}: ActivityCalendarWrapperProps) => {
+const ActivityCalendarWrapper = ({ data }: ActivityCalendarWrapperProps) => {
   const { theme } = useTheme();
 
   if (!theme) return null;

@@ -7,24 +7,24 @@ import Marquee from 'react-fast-marquee';
 const LOGOS = [
   {
     name: 'Company 1',
-    image: '/images/logos/logo1.png'
+    image: '/images/logos/logo1.png',
   },
   {
-    name: 'Company 2', 
-    image: '/images/logos/logo2.png'
+    name: 'Company 2',
+    image: '/images/logos/logo2.png',
   },
   {
     name: 'Company 3',
-    image: '/images/logos/logo3.png'
+    image: '/images/logos/logo3.png',
   },
   {
     name: 'Company 4',
-    image: '/images/logos/logo4.png'
+    image: '/images/logos/logo4.png',
   },
   {
     name: 'Company 5',
-    image: '/images/logos/logo5.png'
-  }
+    image: '/images/logos/logo5.png',
+  },
 ];
 
 export const Logos = () => (
@@ -35,8 +35,7 @@ export const Logos = () => (
       className="px-4"
     >
       <p className="text-center text-muted-foreground text-sm">
-        My projects have been used by the world&apos;s most innovative
-        companies
+        My projects have been used by the world&apos;s most innovative companies
       </p>
     </ViewAnimation>
 

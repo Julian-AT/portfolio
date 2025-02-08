@@ -1,7 +1,7 @@
-import { Section } from '@julian-at/components/section';
-import { Suspense } from 'react';
 import { ContactForm } from '@julian-at/app/contact/components/contact-form';
 import { Hero } from '@julian-at/app/contact/components/hero';
+import { Section } from '@julian-at/components/section';
+import { Suspense } from 'react';
 
 export const generateMetadata = () => {
   return {

@@ -14,7 +14,6 @@ export const OpenSource = async () => {
     type: 'all',
   });
 
-
   const repos = repositories.data
     .filter((item) => !item.archived)
     .filter((item) => item.name !== username)

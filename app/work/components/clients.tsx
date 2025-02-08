@@ -6,40 +6,40 @@ import Image from 'next/image';
 
 const CLIENTS = [
   {
-    _title: "Raiffeisen Software",
-    url: "https://www.r-software.at/"
+    _title: 'Raiffeisen Software',
+    url: 'https://www.r-software.at/',
   },
   {
-    _title: "Österreichische Nationalbank",
-    url: "https://www.oenb.at/"
+    _title: 'Österreichische Nationalbank',
+    url: 'https://www.oenb.at/',
   },
   {
-    _title: "Österreichische Lotterien",
-    url: "https://www.lotterien.at/"
+    _title: 'Österreichische Lotterien',
+    url: 'https://www.lotterien.at/',
   },
   {
-    _title: "Styria Media Group",
-    url: "https://www.styria.com/de/brands/styria-it-solutions"
+    _title: 'Styria Media Group',
+    url: 'https://www.styria.com/de/brands/styria-it-solutions',
   },
   {
-    _title: "Bundeskanzleramt",
-    url: "https://www.bundeskanzleramt.gv.at/"
+    _title: 'Bundeskanzleramt',
+    url: 'https://www.bundeskanzleramt.gv.at/',
   },
   {
-    _title: "BRZ",
-    url: "https://www.brz.gv.at/"
+    _title: 'BRZ',
+    url: 'https://www.brz.gv.at/',
   },
   {
-    _title: "ITSV",
-    url: "https://www.itsv.at/cdscontent/?contentid=10007.697193&portal=itsvportal"
+    _title: 'ITSV',
+    url: 'https://www.itsv.at/cdscontent/?contentid=10007.697193&portal=itsvportal',
   },
   {
-    _title: "Stadt Wien",
-    url: "https://www.wien.gv.at/"
+    _title: 'Stadt Wien',
+    url: 'https://www.wien.gv.at/',
   },
   {
-    _title: "Magna International",
-    url: "https://www.magna.com/"
+    _title: 'Magna International',
+    url: 'https://www.magna.com/',
   },
 ];
 
@@ -60,9 +60,8 @@ export const Clients = () => {
         </p>
       </ViewAnimation>
       <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
-        {CLIENTS
-          .sort((a, b) => a._title.localeCompare(b._title))
-          .map((client, index) => (
+        {CLIENTS.sort((a, b) => a._title.localeCompare(b._title)).map(
+          (client, index) => (
             <ViewAnimation
               initial={{ opacity: 0, translateY: -8 }}
               whileInView={{ opacity: 1, translateY: 0 }}
@@ -89,7 +88,8 @@ export const Clients = () => {
                 client._title
               )}
             </ViewAnimation>
-          ))}
+          )
+        )}
       </div>
     </Section>
   );

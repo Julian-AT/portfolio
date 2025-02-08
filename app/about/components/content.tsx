@@ -1,6 +1,5 @@
 import { Prose } from '@julian-at/components/prose';
 import { Section } from '@julian-at/components/section';
-import { richTextComponents } from '@julian-at/lib/rich-text';
 import { cn } from '@julian-at/lib/utils';
 import { ViewAnimation } from '@julian-at/providers/view-animation';
 import Image from 'next/image';
@@ -21,10 +20,18 @@ export const Content = () => (
           <small className="text-muted-foreground">About me</small>
           <Prose>
             <p>
-              As a passionate Full-Stack Developer in Vienna, I thrive on turning complex problems into elegant solutions. My expertise lies in crafting seamless web experiences, with a particular focus on Next.js, React, and TypeScript. I'm driven by clean code principles and always eager to embrace cutting-edge technologies.
+              As a passionate Full-Stack Developer in Vienna, I thrive on
+              turning complex problems into elegant solutions. My expertise lies
+              in crafting seamless web experiences, with a particular focus on
+              Next.js, React, and TypeScript. I'm driven by clean code
+              principles and always eager to embrace cutting-edge technologies.
             </p>
             <p>
-              Beyond the screen, I'm an avid chess player and open-source enthusiast. You'll often find me diving into system design challenges, optimizing performance bottlenecks, or sharing knowledge with the developer community. I believe in writing code that not only works but tells a story.
+              Beyond the screen, I'm an avid chess player and open-source
+              enthusiast. You'll often find me diving into system design
+              challenges, optimizing performance bottlenecks, or sharing
+              knowledge with the developer community. I believe in writing code
+              that not only works but tells a story.
             </p>
           </Prose>
         </div>

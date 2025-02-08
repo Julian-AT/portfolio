@@ -1,16 +1,15 @@
+import Vinyl from '@julian-at/app/(home)/components/spotify/vinyl.png';
 import type { SpotifyProperties } from '@julian-at/app/api/cron/spotify/route';
 import { cn } from '@julian-at/lib/utils';
 import { ViewAnimation } from '@julian-at/providers/view-animation';
 import { get } from '@vercel/edge-config';
 import Image from 'next/image';
 import type { ReactElement } from 'react';
-import Vinyl from '@julian-at/app/(home)/components/spotify/vinyl.png';
 
 export const Spotify = async (): Promise<ReactElement> => {
   const song = await get<SpotifyProperties>('spotify');
 
-  console.log("song", song);
-  
+  console.log('song', song);
 
   if (!song) {
     return <div />;

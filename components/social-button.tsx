@@ -1,6 +1,6 @@
+import { Button } from '@julian-at/components/ui/button';
 import type { social } from '@julian-at/lib/social';
 import Image from 'next/image';
-import { Button } from '@julian-at/components/ui/button';
 
 type SocialButtonProps = {
   data: (typeof social)[keyof typeof social];

@@ -1,12 +1,12 @@
-import { Button } from '@julian-at/components/ui/button';
-import { navigation } from '@julian-at/lib/navigation';
-import { HeaderProvider } from '@julian-at/providers/header';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ViewAnimation } from '@julian-at/providers/view-animation';
 import { ActiveLink } from '@julian-at/components/active-link';
 import { MobileMenu } from '@julian-at/components/header/mobile-menu';
 import { MobileMenuTrigger } from '@julian-at/components/header/mobile-menu-trigger';
+import { Button } from '@julian-at/components/ui/button';
+import { navigation } from '@julian-at/lib/navigation';
+import { HeaderProvider } from '@julian-at/providers/header';
+import { ViewAnimation } from '@julian-at/providers/view-animation';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const Header = () => (
   <>

@@ -16,7 +16,7 @@ export const HACKATHONS = [
   },
   {
     name: '36th School CCC 2022',
-    logo: '/assets/images/cf_logo.png', 
+    logo: '/assets/images/cf_logo.png',
     rank: '45',
     time: '00:53:14',
     date: '11.11.2022',
@@ -27,7 +27,7 @@ export const HACKATHONS = [
     name: '36th Classic CCC 2022',
     logo: '/assets/images/cf_logo.png',
     rank: '97',
-    time: '00:21:47', 
+    time: '00:21:47',
     date: '11.11.2022',
     location: 'Vienna, Austria',
     url: 'https://register.codingcontest.org/',
@@ -38,7 +38,7 @@ export const HACKATHONS = [
     rank: '39',
     time: '01:58:45',
     date: '31.03.2023',
-    location: 'Vienna, Austria', 
+    location: 'Vienna, Austria',
     url: 'https://register.codingcontest.org/',
   },
   {
@@ -107,7 +107,7 @@ export const Hackathons = () => {
                   alt={item.name}
                   width={100}
                   height={100}
-                  className='aspect-square size-12 rounded-full object-cover'
+                  className="aspect-square size-12 rounded-full object-cover"
                 />
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-3">

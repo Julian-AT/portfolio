@@ -1,12 +1,12 @@
-import { cn } from "@julian-at/lib/utils";
-import { ViewAnimation } from "@julian-at/providers/view-animation";
-import { get } from "@vercel/edge-config";
-import Image from "next/image";
-import type { ReactElement } from "react";
-import type { OkuProperties } from "@julian-at/app/api/cron/oku/route";
+import type { OkuProperties } from '@julian-at/app/api/cron/oku/route';
+import { cn } from '@julian-at/lib/utils';
+import { ViewAnimation } from '@julian-at/providers/view-animation';
+import { get } from '@vercel/edge-config';
+import Image from 'next/image';
+import type { ReactElement } from 'react';
 
 export const RecentBook = async (): Promise<ReactElement> => {
-  const books = await get<OkuProperties>("oku");
+  const books = await get<OkuProperties>('oku');
 
   if (!books) {
     return <div />;
@@ -18,8 +18,8 @@ export const RecentBook = async (): Promise<ReactElement> => {
     <ViewAnimation initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
       <a
         className={cn(
-          "flex max-h-80 flex-col justify-between gap-2 rounded-lg border bg-background p-8 shadow-sm transition-all",
-          "hover:-translate-y-0.5 hover:shadow"
+          'flex max-h-80 flex-col justify-between gap-2 rounded-lg border bg-background p-8 shadow-sm transition-all',
+          'hover:-translate-y-0.5 hover:shadow'
         )}
         href={recentBook.link}
         target="_blank"

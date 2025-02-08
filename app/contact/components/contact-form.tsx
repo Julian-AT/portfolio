@@ -1,6 +1,8 @@
 'use client';
 
+import { zodResolver } from '@hookform/resolvers/zod';
 import { contact } from '@julian-at/app/actions/contact';
+import { contactSchema } from '@julian-at/app/contact/schema';
 import { Button } from '@julian-at/components/ui/button';
 import {
   Form,
@@ -19,13 +21,11 @@ import {
   SelectValue,
 } from '@julian-at/components/ui/select';
 import { Textarea } from '@julian-at/components/ui/textarea';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { ArrowRightIcon } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import type { z } from 'zod';
-import { contactSchema } from '@julian-at/app/contact/schema';
 
 const typeOptions = [
   {

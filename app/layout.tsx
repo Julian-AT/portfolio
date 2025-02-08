@@ -17,7 +17,7 @@ const name = 'Julian Schmidt';
 const protocol = env.VERCEL_PROJECT_PRODUCTION_URL.includes('localhost')
   ? 'http'
   : 'https';
-const siteUrl = new URL(`${protocol}://${env.VERCEL_PROJECT_PRODUCTION_URL}`); 
+const siteUrl = new URL(`${protocol}://${env.VERCEL_PROJECT_PRODUCTION_URL}`);
 
 export const metadata: Metadata = {
   applicationName: name,
@@ -69,9 +69,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
       >
         <Header />
         <div className="container mx-auto h-[52px] sm:h-16 sm:border-x" />
-        <main className="divide-y sm:border-b">
-          {children}
-        </main>
+        <main className="divide-y sm:border-b">{children}</main>
         <Footer />
       </ThemeProvider>
       <Toaster />

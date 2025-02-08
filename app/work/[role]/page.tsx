@@ -1,3 +1,4 @@
+import { ROLES } from '@julian-at/app/work/components/roles';
 import { Prose } from '@julian-at/components/prose';
 import { Section } from '@julian-at/components/section';
 import { HeroSection } from '@julian-at/components/sections/hero';
@@ -6,8 +7,6 @@ import { cn } from '@julian-at/lib/utils';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Balancer from 'react-wrap-balancer';
-import { ROLES } from '@julian-at/app/work/components/roles';
-
 
 type RoleProps = {
   params: {
@@ -16,7 +15,7 @@ type RoleProps = {
 };
 
 export const generateMetadata = async ({ params }: RoleProps) => {
-  const role = ROLES.find(r => r.slug === params.role);
+  const role = ROLES.find((r) => r.slug === params.role);
 
   if (!role) {
     return {};
@@ -29,7 +28,7 @@ export const generateMetadata = async ({ params }: RoleProps) => {
 };
 
 const Role = async ({ params }: RoleProps) => {
-  const role = ROLES.find(r => r.slug === params.role);
+  const role = ROLES.find((r) => r.slug === params.role);
 
   if (!role) {
     return notFound();
@@ -39,13 +38,15 @@ const Role = async ({ params }: RoleProps) => {
     <>
       <HeroSection
         image={
-            <Image
-              src={`https://img.logo.dev/${new URL(role.url).hostname}?token=${env.NEXT_PUBLIC_LOGO_DEV_TOKEN}`}
-              alt={role.title}
-              width={100}
-              height={100}
-              className="aspect-square h-8 w-auto object-contain sm:h-12"
-            />
+          <Image
+            src={`https://img.logo.dev/${new URL(role.url!).hostname}?token=${
+              env.NEXT_PUBLIC_LOGO_DEV_TOKEN
+            }`}
+            alt={role.title}
+            width={100}
+            height={100}
+            className="aspect-square h-8 w-auto object-contain sm:h-12"
+          />
         }
         title={`${role.role} at ${role.title}`}
       >
@@ -68,11 +69,7 @@ const Role = async ({ params }: RoleProps) => {
           {role.url && (
             <>
               <p>&bull;</p>
-              <a
-                href={role.url}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
+              <a href={role.url} target="_blank" rel="noreferrer noopener">
                 {new URL(role.url).hostname}
               </a>
             </>

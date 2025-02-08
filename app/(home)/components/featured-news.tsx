@@ -28,7 +28,7 @@ export const FeaturedNews = () => (
           alt="Featured news image"
           width={800}
           height={450}
-          className='h-full w-full rounded-t-lg border border-secondary object-cover sm:rounded-t-2xl'
+          className="h-full w-full rounded-t-lg border border-secondary object-cover sm:rounded-t-2xl"
         />
       </Link>
       <div className="dashed-line-top" />

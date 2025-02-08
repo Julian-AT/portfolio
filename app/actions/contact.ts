@@ -1,5 +1,6 @@
 'use server';
 
+import type { contactSchema } from '@julian-at/app/contact/schema';
 import { env } from '@julian-at/lib/env';
 import { resend } from '@julian-at/lib/resend';
 import { parseError } from '@julian-at/lib/utils';
@@ -8,7 +9,6 @@ import { Redis } from '@upstash/redis';
 import { revalidatePath } from 'next/cache';
 import { headers } from 'next/headers';
 import type { z } from 'zod';
-import type { contactSchema } from '@julian-at/app/contact/schema';
 
 export const contact = async (
   data: z.infer<typeof contactSchema>
