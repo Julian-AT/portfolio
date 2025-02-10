@@ -20,18 +20,27 @@ export const Content = () => (
           <small className="text-muted-foreground">About me</small>
           <Prose>
             <p>
-              As a passionate Full-Stack Developer in Vienna, I thrive on
-              turning complex problems into elegant solutions. My expertise lies
-              in crafting seamless web experiences, with a particular focus on
-              Next.js, React, and TypeScript. I'm driven by clean code
-              principles and always eager to embrace cutting-edge technologies.
+              I'm a software engineer based in Vienna, specializing in AI-driven
+              applications and modern web development. My focus is on building
+              scalable, efficient systems with technologies like Next.js, React,
+              and TypeScript. I enjoy solving complex technical challenges and
+              designing architectures that are both performant and maintainable.
             </p>
+
+            <h3>What I Do</h3>
+            <ul>
+              <li>
+                Develop AI-powered applications and generative UI solutions.
+              </li>
+              <li>Optimize performance bottlenecks in large-scale systems.</li>
+              <li>Explore machine learning and system design.</li>
+            </ul>
+
+            <h3>Beyond Code</h3>
             <p>
-              Beyond the screen, I'm an avid chess player and open-source
-              enthusiast. You'll often find me diving into system design
-              challenges, optimizing performance bottlenecks, or sharing
-              knowledge with the developer community. I believe in writing code
-              that not only works but tells a story.
+              Outside of development, I'm passionate about chess, open-source
+              innovation, and exploring new technologies. I enjoy discussing AI,
+              software architecture, and automation in modern applications.
             </p>
           </Prose>
         </div>
