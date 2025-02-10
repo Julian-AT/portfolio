@@ -63,7 +63,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
     <body className="overflow-x-hidden bg-backdrop font-sans antialiased">
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="light"
         enableSystem
         disableTransitionOnChange
       >
