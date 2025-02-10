@@ -5,12 +5,10 @@ import { env } from '@julian-at/lib/env';
 import { cn } from '@julian-at/lib/utils';
 import { ViewAnimation } from '@julian-at/providers/view-animation';
 import Image from 'next/image';
-import Link from 'next/link';
 
 interface Certificate {
   title: string;
   description: string;
-  date: string;
   image: string;
 }
 
@@ -19,7 +17,6 @@ export const CERTIFICATES: Certificate[] = [
     title: 'Cisco CCNA',
     description:
       'Cisco Certified Network Associate - Comprehensive networking certification covering routing, switching, security and network management',
-    date: '2023-06-15', // Using a more realistic past date
     image:
       'https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccna/index.html',
   },
@@ -27,14 +24,12 @@ export const CERTIFICATES: Certificate[] = [
     title: 'Elmayer Business Etiquette',
     description:
       'Professional business etiquette certification from the renowned Elmayer School - Covering international business protocols, communication standards and corporate culture',
-    date: '2023-09-01',
     image: 'https://elmayer.at/etikette/',
   },
   {
     title: 'Sicherheitsvertrauenspersonen',
     description:
       'Austrian Safety Representative Certification - Qualified to oversee workplace safety standards and emergency protocols in corporate environments',
-    date: '2023-11-30',
     image:
       'https://www.htl-donaustadt.at/aktivitaeten/details?tx_ttnews%5Btt_news%5D=262&cHash=c163afdffb41225669a7fbf93353b137',
   },
@@ -54,13 +49,10 @@ const Certificates = () => {
           )}
           key={index}
         >
-          <Link
-            href={`/work/${certificate.title}`}
-            className={cn(
-              'flex flex-col items-start gap-6 px-4 py-8 transition-colors hover:bg-background',
+          <div className={cn(
+              'flex h-full flex-col items-start gap-6 px-4 py-8 transition-colors hover:bg-background',
               'sm:flex-row sm:px-8'
-            )}
-          >
+            )}>
             <div className="flex h-12 w-12 shrink-0 items-center justify-center">
               {certificate.image ? (
                 <Image
@@ -91,11 +83,8 @@ const Certificates = () => {
               <Prose className="prose-sm">
                 <p>{certificate.description}</p>
               </Prose>
-              <p className="text-muted-foreground text-sm">
-                {certificate.date}
-              </p>
             </div>
-          </Link>
+            </div>
         </ViewAnimation>
       ))}
       {CERTIFICATES.length % 2 ? (
