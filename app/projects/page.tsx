@@ -4,7 +4,7 @@ import { Hero } from '@julian-at/app/projects/components/hero';
 
 export const generateMetadata = () => {
   return {
-    title: 'Projects',
+    title: 'Julian Schmidt - Projects',
     description: 'My Projects',
   };
 };

@@ -4,7 +4,7 @@ import { Roles } from '@julian-at/app/work/components/roles';
 
 export const generateMetadata = () => {
   return {
-    title: 'Work',
+    title: 'Julian Schmidt - Work',
     description: 'The projects I have worked on.',
   };
 };

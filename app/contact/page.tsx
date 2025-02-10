@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 
 export const generateMetadata = () => {
   return {
-    title: 'Contact',
+    title: 'Julian Schmidt - Contact',
     description: 'Contact Me',
   };
 };

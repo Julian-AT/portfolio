@@ -31,7 +31,7 @@ export const APPS = [
     url: 'https://interiorly.dev',
     status: 'Active',
     image: {
-      url: '/assets/images/interiorly_clip1.jpg',
+      url: '/assets/images/interiorly_screen.png',
       alt: 'Interiorly AI Screenshot',
       width: 1920,
       height: 1080,

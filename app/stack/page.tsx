@@ -4,7 +4,7 @@ import { Hero } from '@julian-at/app/stack/components/hero';
 
 export const generateMetadata = () => {
   return {
-    title: 'Stack',
+    title: 'Julian Schmidt - Stack',
     description: 'The tools I use to build things.',
   };
 };

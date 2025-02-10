@@ -11,7 +11,7 @@ export const env = createEnv({
     KV_REST_API_TOKEN: z.string().min(1),
     RESEND_FROM: z.string().min(1).email(),
     RESEND_TO: z.string().min(1).email(),
-    VERCEL_TOKEN: z.string().min(1),
+    VERCEL_TOKEN: z.string().min(1).optional(),
     EDGE_CONFIG: z.string().min(1).url(),
     EDGE_CONFIG_ID: z.string().min(1).startsWith('ecfg_'),
     SPOTIFY_CLIENT_ID: z.string().min(1),

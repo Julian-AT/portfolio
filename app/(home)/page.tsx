@@ -9,7 +9,7 @@ import { RecentBook } from './components/recent-book';
 
 export const generateMetadata = () => {
   return {
-    title: 'Julian Schmidt',
+    title: 'Julian Schmidt - Home',
     description: 'Software Engineer',
   };
 };

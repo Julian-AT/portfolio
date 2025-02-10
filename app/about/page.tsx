@@ -5,7 +5,7 @@ import Certificates from './components/certificates';
 
 export const generateMetadata = () => {
   return {
-    title: 'About',
+    title: 'Julian Schmidt - About',
     description: 'About Me',
   };
 };
