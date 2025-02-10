@@ -11,7 +11,7 @@ export const ROLES = [
     slug: 'ossbig-paper',
     title: 'AI-Assisted Dev Paper',
     description:
-      'Co-authored a technical research paper exploring AI-assisted software development methodologies and practical applications, published by OSSBIG. The paper examines implementation patterns and developer workflows.',
+      'Co-authored a research paper on AI-assisted software development methodologies, exploring real-world applications and developer workflows. Published by OSSBIG in collaboration with industry leaders.',
     endYear: '2024',
     startYear: '2024',
     role: 'Co-author',
@@ -22,7 +22,16 @@ export const ROLES = [
     content: [
       {
         type: 'paragraph',
-        content: 'Detailed description of paper and findings...',
+        content:
+          'Conducted research exploring the capabilities and limitations of AI-assisted software development tools. Analyzed how large language models and AI agents can augment developer workflows through code generation, pair programming, and automated testing.',
+      },
+      {
+        type: 'bulletList',
+        content: [
+          'Evaluated effectiveness of AI coding assistants like GitHub Copilot and Amazon CodeWhisperer.',
+          'Researched impact of LLMs on developer productivity and code quality.',
+          'Analyzed real-world case studies of AI tool adoption in software teams.',
+        ],
       },
     ],
     image:
@@ -33,10 +42,10 @@ export const ROLES = [
     slug: 'brz-knowledge-discovery',
     title: 'Internship',
     description:
-      'Built a RAG-powered chatbot interface for intuitive SAP data access and retrieval. Implemented document automation with OCR technology for efficient processing. Enhanced development workflows through CI/CD pipeline implementation.',
+      'Developed AI-driven solutions for enterprise automation, focusing on document processing and data retrieval in large-scale SAP environments.',
     endYear: 'Aug. 2024',
     startYear: 'Jul. 2024',
-    role: 'Knowledge Discovery',
+    role: 'Knowledge Discovery Intern',
     url: 'https://www.brz.gv.at/',
     type: 'Full-time',
     company: 'Bundesrechenzentrum (BRZ)',
@@ -44,7 +53,16 @@ export const ROLES = [
     content: [
       {
         type: 'paragraph',
-        content: 'Detailed description of role and achievements...',
+        content:
+          'Designed and implemented an LLM-based retrieval-augmented chatbot to facilitate intuitive access to SAP data. Improved document processing workflows by integrating OCR-powered automation, reducing manual workload and enhancing accuracy.',
+      },
+      {
+        type: 'bulletList',
+        content: [
+          'Built a RAG-powered chatbot for efficient SAP data retrieval.',
+          'Implemented OCR-driven document automation to streamline processing.',
+          'Optimized CI/CD pipelines for AI model deployment and software workflows.',
+        ],
       },
     ],
     image: 'https://brz.portal.at/fcc/TwoFactorOTP/assets/img/brz-logo.png',
@@ -53,7 +71,7 @@ export const ROLES = [
     slug: 'stamm-automation-engineer',
     title: 'Railway Automation Engineer',
     description:
-      'Configured and managed automation systems for model railway layouts. Set up scheduling and traffic control for coordinating multiple trains across complex track configurations.',
+      'Designed and optimized automation systems for model railway control, enabling efficient scheduling and real-time traffic coordination.',
     endYear: '2024',
     startYear: '2023',
     role: 'Automation Engineer',
@@ -63,7 +81,16 @@ export const ROLES = [
     content: [
       {
         type: 'paragraph',
-        content: 'Detailed description of role and achievements...',
+        content:
+          'Developed automation logic for railway control systems, ensuring smooth coordination of multiple trains across complex track layouts. Focused on reliability, scalability, and real-time responsiveness in control algorithms.',
+      },
+      {
+        type: 'bulletList',
+        content: [
+          'Configured scheduling and traffic control systems for model railways.',
+          'Developed automation scripts for optimizing track operations.',
+          'Integrated real-time monitoring and safety mechanisms.',
+        ],
       },
     ],
   },
@@ -71,10 +98,10 @@ export const ROLES = [
     slug: 'drei-agile-software-engineer',
     title: 'Internship',
     description:
-      'Developed and maintained Python-based internal tools to streamline workflows and enhance operational efficiency. Collaborated in an agile team environment to deliver impactful process improvements.',
+      'Developed internal automation tools using Python, improving efficiency in business operations and IT workflows.',
     endYear: '2021',
     startYear: '2021',
-    role: 'Agile Development',
+    role: 'Agile Development Intern',
     url: 'https://www.three.com/',
     type: 'Full-time',
     company: 'Hutchison Drei Austria',
@@ -82,13 +109,23 @@ export const ROLES = [
     content: [
       {
         type: 'paragraph',
-        content: 'Detailed description of role and achievements...',
+        content:
+          'Worked in an agile team to build Python-based automation tools that streamlined internal processes. Assisted in debugging, testing, and optimizing operational scripts.',
+      },
+      {
+        type: 'bulletList',
+        content: [
+          'Developed automation scripts to reduce manual IT workload.',
+          'Improved internal reporting efficiency with Python-based tools.',
+          'Collaborated with teams to enhance workflow automation strategies.',
+        ],
       },
     ],
     image:
       'https://upload.wikimedia.org/wikipedia/de/thumb/2/23/Drei-Logo.svg/1200px-Drei-Logo.svg.png',
   },
 ];
+
 
 export const Roles = () => {
   if (!ROLES.length) {

@@ -42,15 +42,27 @@ const Role = async ({ params }: RoleProps) => {
     <>
       <HeroSection
         image={
-          <Image
-            src={`https://img.logo.dev/${new URL(role.url!).hostname}?token=${
-              env.NEXT_PUBLIC_LOGO_DEV_TOKEN
-            }`}
-            alt={role.title}
-            width={100}
-            height={100}
-            className="aspect-square h-8 w-auto object-contain sm:h-12"
-          />
+          role.image || role.url ? (
+            <Image
+              src={
+                role.image ||
+                `https://img.logo.dev/${new URL(role.url).hostname}?token=${env.NEXT_PUBLIC_LOGO_DEV_TOKEN}`
+              }
+              width={48}
+              height={48}
+              alt={role.title}
+              className={cn(
+                'block h-12 w-12 object-contain',
+                role.invert && 'dark:invert'
+              )}
+            />
+          ) : (
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-border">
+              <span className="text-muted-foreground text-xl">
+                {role.company.charAt(0)}
+              </span>
+            </div>
+          )
         }
         title={`${role.role} at ${role.title}`}
       >
